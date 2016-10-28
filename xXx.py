@@ -9,12 +9,12 @@ def main(args):
 
     if args['command'] == 'build':
         docker.prepare(image='mrvertigo/archlinux-dev:latest',
-                       command='make -j')
+                       command='make -s -j')
         docker.run()
 
     elif args['command'] == 'clean':
         docker.prepare(image='mrvertigo/archlinux-dev:latest',
-                       command='make clean')
+                       command='make -s clean')
         docker.run()
 
     elif args['command'] == 'flash':
